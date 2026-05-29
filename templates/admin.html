@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Admin Panel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card p-4 shadow">
+
+<h3>
+
+Add Product
+
+</h3>
+
+<form method="POST">
+
+<input class="form-control mb-3"
+name="name"
+placeholder="Product">
+
+<input class="form-control mb-3"
+name="price"
+placeholder="Price">
+
+<textarea class="form-control mb-3"
+name="description">
+
+</textarea>
+
+<button class="btn btn-primary w-100">
+
+Add Product
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="col-md-8">
+
+<div class="card p-4 shadow">
+
+<h3>
+
+Products
+
+</h3>
+
+<table class="table">
+
+{% for p in products %}
+
+<tr>
+
+<td>
+
+{{p.name}}
+
+</td>
+
+<td>
+
+₹{{p.price}}
+
+</td>
+
+<td>
+
+{{p.description}}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
